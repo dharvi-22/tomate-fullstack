@@ -1,0 +1,318 @@
+//hero section
+.hero-container{
+    position: relative;
+    text-align: left;
+    padding: 7rem 2rem;
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 200vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    
+
+.hero-background{
+    position: absolute;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    top:0;
+    left:0;
+    transform: translateX(-2%);
+    z-index: -1;
+    width: 100vw;
+    object-fit: cover;
+    height: 100%;
+}
+
+    h1{
+        font-family: Quicksand;
+        font-size: 26px;
+        font-weight: 400;
+        color:#BD0300;
+        padding-bottom: 0.5rem;
+    }
+    p{
+        text-align: left;
+        font-family: Quicksand;
+        font-size: 16px;
+        color: #454543;
+        margin-bottom: 1rem;
+    }
+
+    .home-button{
+        text-decoration: none;
+        font-family: Quicksand, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        margin: 1.5rem auto;
+        justify-content: center;
+        border-radius: 25px;
+        color:#BD0300;
+        background-color: none;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #BD0300;
+        cursor: pointer;
+        margin-left: 0;
+    
+        &:hover{
+            background-color:#BD0300;
+            color:#FEFDFE;
+        }
+    }
+    
+    .hero-cards{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 2.5rem;
+
+    .hero-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        overflow: hidden;
+        }
+        
+        .recipe-img{
+            width: 100%;
+            height: 150px;
+            display: block;
+            object-fit: cover; 
+        }
+
+        .hero-card-text{
+            background:#BD0300;
+            color:#FEFDFE;
+            padding: 1.8rem 2rem;
+            text-align: left;
+            width: 100%;
+            text-decoration: none;
+
+            h3{
+                font-family: Quicksand;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+                text-decoration: none;
+            }
+            p{
+                font-family: Quicksand;
+                color:#FEFDFE;
+                font-size: 16px;
+                text-decoration: none;
+            }
+            &:hover{
+                background-color: #a70502;
+            }
+        }
+    }
+} 
+
+.hero-icon{
+    display: none;
+}
+
+
+//carousel loop 
+.carousel-container{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 4rem;
+    padding: 40px 0;
+}
+
+.carousel-track{
+    display: flex;
+    gap: 1.5rem;
+    animation: scrollLoop 20s linear infinite;
+    width: max-content;
+
+    img{
+        width: 70px;
+    }
+}
+
+@keyframes subtle-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+@keyframes scrollLoop {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-container{
+        padding: 12rem 4rem;
+        min-height: 200vh;
+
+        h1{
+            font-size: 32px;
+            padding-left: 4rem;
+        }
+        .home-button{
+            margin-left: 4rem;
+        }
+        .hero-p{
+            margin-left: 4rem;
+            font-size: 18px;
+        }
+
+    .hero-background{
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    }
+    .hero-cards{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 50%;
+        max-width: 900px;
+        padding-top: 4rem;
+    
+    .hero-card{
+        align-items: stretch;
+        overflow: hidden;
+        height: auto;
+        width:90%;
+        max-height: 240px;
+      
+    .recipe-img{
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+    .hero-card-text{
+        width: 90%;
+        height: 240px;
+        padding: 2rem;
+
+        p{
+            padding-top: 6rem;
+        }
+    }
+    }
+    .hero-card:first-child{
+        flex-direction: row;
+    }
+    .hero-card:last-child{
+        flex-direction: row-reverse;
+    }
+    }
+
+
+    .hero-icon{
+        display: block;
+        position: absolute;
+        top: 8%;
+        right: 25%;
+        transition: all 0.3s ease;
+
+        &:hover {
+             svg {
+              animation: subtle-pulse 0.8s infinite ease-in-out;
+            }
+          }
+    }
+
+    .carousel-track{
+        img{
+            width: 85px;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+
+    .hero-container{
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        min-height: 300vh;
+
+        .home-button{
+            position: absolute;
+            top: 11%;
+            left: 15%;
+        }
+        .hero-p{
+            position:absolute;
+            top: 23%;
+            left:15%;
+            font-size: 20px;
+        }
+        h1{
+            font-size: 50px;
+            position: absolute;
+            top: 16%;
+            left: 15%;
+        }
+        
+    }
+
+    .hero-cards{
+        align-self: center;
+        gap: 4rem;
+    
+        .hero-card{
+            align-items: stretch;
+            overflow: hidden;
+            height: auto;
+            width:90%;
+            max-height: 400px;
+          
+        
+        .recipe-img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .hero-card-text{
+            width: 90%;
+            height: 400px;
+            padding: 2rem;
+
+            h3{
+                font-size: 24px;
+            }
+            p{
+                font-size: 18px;
+                padding-top: 14.5rem;
+            }
+        }
+        }
+    }
+    
+    .hero-background{
+        position:absolute;
+        width: 100vw;
+        object-fit: cover;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+    .hero-icon{
+        top: 5%;
+        right: 34%;
+    }
+}
