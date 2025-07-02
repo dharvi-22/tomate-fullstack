@@ -1,0 +1,53 @@
+# Node modules (frontend + backend)
+**/node_modules/
+
+# Environment variables
+**/.env
+
+# Build output
+frontend/build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings
+.vscode/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Docker-related
+docker-compose.override.yml
+frontend/.dockerignore
+
+# Optional DB files
+db/*.sqlite
+db/*.db
+
+# Build artifacts
+build/
+dist/
+
+# Docker volumes
+*.pid
+*.sock
+
+# Ignore all database files and folders
+db/
+
+# MySQL & DB files
+db/
+*.ibd
+*.pem
+*.cnf
+binlog.*
+auto.cnf
+mysql.sock
+*.log
+
+# VS Code
+.vscode/

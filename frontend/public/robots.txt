@@ -1,0 +1,4 @@
+# This allows all search engines to crawl everything
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
