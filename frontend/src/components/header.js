@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.scss"; 
-import icon from '../assets/t-icon.svg';
-import logo from '../assets/t-logo.svg';
+import whiteicon from '../assets/white-icon.svg';
+import whitelogo from '../assets/white-logo.svg';
 
 const Header =() => {
     return (
@@ -10,12 +10,13 @@ const Header =() => {
             <nav className="nav" role="navigation" aria-labelledby="main-menu">
                 {/*Logos Container*/}
                 <div className="logos" aria-label="Tomato icons">
-                   <Link to="/"><img src={icon} alt="tomato icon" className="icon"></img></Link>
-                   <Link to="/"><img src={logo} alt="tomato logo" className="logo"></img></Link>
+                   <Link to="/"><img src={whiteicon} alt="tomato icon" className="icon"></img></Link>
+                   <Link to="/"><img src={whitelogo} alt="tomato logo" className="logo"></img></Link>
                 </div>
                 <ul className="nav-links">
-                    <li><Link to="/explore">EXPLORE</Link></li>
+                    <li><Link to="/cooking-hacks">COOKING HACKS</Link></li>
                     <li><Link to="/meal-match">MEAL MATCH</Link></li>
+                    <li className="silent"><Link to="/explore">EXPLORE RECIPES</Link></li>
                 </ul>
             </nav>
       

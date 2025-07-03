@@ -4,7 +4,8 @@
 .header{
     width: 100%;
     border-bottom: 2px solid #BD0300;
-    padding: 40px;
+    padding: 4rem 1.5rem;
+    background-color: #BD0300;
 
     .nav{
         max-width: 1200px;
@@ -30,20 +31,23 @@
     .nav-links{
         list-style: none;
         display: flex;
-        gap: 20px;
+        gap: 2rem;
         font-family: Quicksand, sans-serif;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 14px;
-
+        
+        .silent{
+            display: none;
+        }
         :hover{
-            border-bottom: 1.5px solid #BD0300;
+            border-bottom: 1.5px solid white;
         }
 
         li{
             white-space: nowrap;
             a{
                 text-decoration: none;
-                color: #454543;
+                color: white;
             }
         }
     }
@@ -52,34 +56,28 @@
 //tablet and desktop view
 @media (min-width: 768px){
     .nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
+        align-items: flex-end;
     }
     .logos{
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
 
         .icon{
             display: none;
         }
         .logo{
             display: block !important;
-            width: 120px;
+            width: 140px;
             height: auto;
-
         }
     }
     .nav-links {
-        position: absolute;
-        left: 20px;
-        right: 20px;
+        justify-content: flex-end;
         display: flex;
-        justify-content: space-between;
+        width: 100%;
+        gap: 4rem !important;
     
+        .silent{
+            display: block !important;
+        }
     }
 }

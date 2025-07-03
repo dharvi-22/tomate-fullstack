@@ -8,6 +8,7 @@ import Form from "./pages/Form";
 import Explore from "./pages/Explore";
 import RecipePage from "./pages/RecipePage";
 import MealMatch from "./pages/MealMatch";
+import CookingHacks from "./pages/CookingHacks";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/form" element={<Form />} />
             <Route path="/meal-match" element={<MealMatch />} />
             <Route path="/recipe/:id" element={<RecipePage />} />
+            <Route path="/cooking-hacks" element={<CookingHacks />} />
           </Routes>
         </main>
 
