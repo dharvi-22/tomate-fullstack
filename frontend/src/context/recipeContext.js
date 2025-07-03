@@ -25,8 +25,8 @@ const RecipeProvider =({children}) => {
         }
     }, []);
 
-    //function to fetch recipes based on search term or category
-    const fetchRecipes = async (query ="", category="") => {
+    //function to fetch recipes based on search term or filters
+    const fetchRecipes = async (query ="", mealType ="", dietaryPreference = "", quickFilter = "") => {
         //if recipes already exist in state, do not fetch again
         //if (recipes.length > 0) return;
 
@@ -36,13 +36,15 @@ const RecipeProvider =({children}) => {
         let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=20&addRecipeInformation=true`;
 
         //if a search term is provided, add it to the url
-        if (query) {
-            url += `&query=${query}`;
-        }
+        if (query) url += `&query=${encodeURIComponent(query)}`;
+        if (mealType) url += `&type=${encodeURIComponent(mealType)}`;
+        if (dietaryPreference) url += `&diet=${encodeURIComponent(dietaryPreference)}`;
 
         //if a category is selected, add it as a dietary filter
-        if (category) {
-            url += `&type=${category}`;
+        if (quickFilter === "maxReadyTime=20") {
+            url += `&maxReadyTime=20`;
+        } else if (quickFilter) {
+            url += `&tags=${encodeURIComponent(quickFilter)}`;
         }
 
         try {
