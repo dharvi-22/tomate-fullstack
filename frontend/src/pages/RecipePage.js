@@ -115,7 +115,8 @@ const RecipePage = () => {
                             <div className="recipe-carousel" ref={carouselRef}>
                                 {recipes
                                     .filter((r) => r.id !== recipe.id)
-                                    .slice(0,6)
+                                    /* number of recipes shown*/
+                                    .slice(0,12)
                                     .map((r) => (
                                         <Link key ={r.id} to={`/recipe/${r.id}`} className="carousel-item">
                                             <img src={r.image} alt={r.title}/>
