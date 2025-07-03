@@ -14,9 +14,9 @@ const Header =() => {
                    <Link to="/"><img src={whitelogo} alt="tomato logo" className="logo"></img></Link>
                 </div>
                 <ul className="nav-links">
-                    <li><Link to="/cooking-hacks">COOKING HACKS</Link></li>
-                    <li><Link to="/meal-match">MEAL MATCH</Link></li>
-                    <li className="silent"><Link to="/explore">EXPLORE RECIPES</Link></li>
+                    <li><Link to="/cooking-hacks">Cooking Hacks</Link></li>
+                    <li><Link to="/meal-match">Meal Match</Link></li>
+                    <li className="silent"><Link to="/explore">Explore Recipes</Link></li>
                 </ul>
             </nav>
       
