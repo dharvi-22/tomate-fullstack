@@ -29,15 +29,16 @@
     h1{
         font-family: Quicksand;
         font-size: 26px;
-        font-weight: 400;
+        font-weight: 600;
         color:#BD0300;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.8rem;
     }
     p{
         text-align: left;
         font-family: Quicksand;
+        font-weight: 500;
         font-size: 16px;
-        color: #454543;
+        color: #BD0300;
         margin-bottom: 1rem;
     }
 
@@ -47,7 +48,7 @@
         font-size: 14px;
         font-weight: 500;
         display: inline-block;
-        margin: 1.5rem auto;
+        margin: 1rem auto;
         justify-content: center;
         border-radius: 25px;
         color:#BD0300;
@@ -125,8 +126,8 @@
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    margin-top: 4rem;
-    padding: 40px 0;
+    margin-top: 0;
+    padding: 1rem 0;
 }
 
 .carousel-track{
@@ -167,20 +168,26 @@
         min-height: 200vh;
 
         h1{
+            position:absolute;
+            top: 8%;
             font-size: 32px;
-            padding-left: 4rem;
+            padding-left: 1rem;
         }
         .home-button{
-            margin-left: 4rem;
+            display:none;
         }
         .hero-p{
-            margin-left: 4rem;
-            font-size: 18px;
+            position:absolute;
+            top: 18%;
+            padding-left: 1rem;
+            font-size: 20px;
         }
 
     .hero-background{
+        position:absolute;
+        top: 15%;
         padding-top: 8rem;
-        padding-bottom: 8rem;
+        padding-bottom: 0;
     }
     }
     .hero-cards{
@@ -251,22 +258,17 @@
         overflow: hidden;
         min-height: 300vh;
 
-        .home-button{
-            position: absolute;
-            top: 11%;
-            left: 15%;
-        }
         .hero-p{
             position:absolute;
-            top: 23%;
-            left:15%;
-            font-size: 20px;
+            top: 15%;
+            left:10%;
+            font-size: 22px;
         }
         h1{
-            font-size: 50px;
+            font-size: 45px;
             position: absolute;
-            top: 16%;
-            left: 15%;
+            top: 6%;
+            left: 10%;
         }
         
     }

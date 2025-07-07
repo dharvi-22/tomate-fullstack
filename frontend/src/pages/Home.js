@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Icon} from "../assets/t-icon.svg";
-import background from "../assets/background.svg";
+import background from "../assets/background-1.svg";
 import pastaImg from "../assets/pasta.png";
 import pizzaImg from "../assets/pizza.png";
 import chiliIcon from "../assets/chili.svg";
@@ -21,8 +21,9 @@ const Home = () => {
     <div className="hero-container">
         <img src={background} alt="circular-background" className="hero-background"/>
         <Link to="/explore" className="home-button">Explore Recipes</Link>
-        <h1>TESTER Quick, Easy & <br />
-          <span>Perfectly Portioned for One.</span>
+        <h1>Cooking made easy. <br />
+          Quick, adjustable and helpful <br />
+          recipes at your fingertips.
         </h1>
         <p className="hero-p">Find tasty recipes that suite your portion size.</p>
 
