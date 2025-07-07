@@ -53,29 +53,15 @@
     }
 
     .cook-time{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    
-
-        div{
-            padding-top: 2rem;
-            text-align: center;
-            flex: 1;
-
-            strong{
-                font-weight: 400;
-                display: block;
-                font-size: 14px;
-                color:#454543;
-            }
-            p{
-                margin-top: 0.2rem;
-                font-size: 14px;
-                margin-bottom: 2rem;
-                color: #454543;
-            }
+        text-align:left;
+        padding: 1rem;
+       
+        p {
+            font-weight: 600;
+            font-size: 16px;
+            color:#454543;
         }
+
     }
     
     .r-background{
@@ -170,6 +156,11 @@
                         top:50%;
                         transform: translate(-50%, -50%);
                     }
+                }
+                input[type="checkbox"]:checked + span{
+                    text-decoration: line-through;
+                    color:#8f8f8d;
+                    font-style: italic;
                 }
             }
         }
@@ -318,13 +309,9 @@
         }
 
         .cook-time{
-            display: flex;
             position: absolute;
             left: 3rem;
-            top: 16rem;
-            justify-content: space-evenly;
-            width: 30%;
-            font-size: 14px;
+            top: 15rem;
         }
 
         .recipe-details{
@@ -415,10 +402,8 @@
             }
         }
         .cook-time{
-            left: 6rem;
+            left: 7rem;
             top: 18rem;
-            width: 30%;
-            font-size: 16px;
 
             div{
                 strong{
