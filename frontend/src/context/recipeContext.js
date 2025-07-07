@@ -27,8 +27,6 @@ const RecipeProvider =({children}) => {
 
     //function to fetch recipes based on search term or filters
     const fetchRecipes = async (query ="", mealType ="", dietaryPreference = "", quickFilter = "") => {
-        //if recipes already exist in state, do not fetch again
-        //if (recipes.length > 0) return;
 
         //start loading state
         setLoading(true);

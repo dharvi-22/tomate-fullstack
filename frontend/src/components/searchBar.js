@@ -35,9 +35,11 @@ const SearchBar = () => {
 
     // handle to clear filters
     const handleClearFilters = () => {
+        setSearchTerm('');
         setMealType('');
         setDietaryPreference('');
         setQuickFilter('');
+        fetchRecipes();
     };
         // Fetch only by category if no search term
         //fetchRecipes("", category); 
