@@ -52,59 +52,63 @@ const CookingHacks =() => {
             <div className="hack-card" key={i}>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
-                <div className="tip-box">{item.tip}</div>
+                <div className="tip-box"><p>{item.tip}</p></div>
             </div>
         ));
     };
 
     return(
-       <div className="hacks-container">
-            <div className="hacks-header">
-             <h1>Cooking Hacks</h1>
-             <h2>Cooking made easy...</h2>
-             <p>Swift through our range of tips and tricks in the kitchen. From batch cooking to small additions that makes the meal! </p>
-             {/*icons container*/}
-             <div className="hacks-icons">
-                <img src={chiliIcon} alt="chili"/>
-                <img src={pepper} alt="pepper"/>
-                <img src={peasnap} alt="pea-snap"/>
-                <img src={tomatoo} alt="tomatoes on vine"/>
-                <img src={brocoli} alt="brocoli"/>
-                <img src={onion} alt="onion"/>
-             </div>
+         <>
+        {/* Header section remains */}
+        <div className="hacks-header">
+            <h1>Cooking Hacks</h1>
+            <h2>Cooking made easy...</h2>
+            <p> Swift through our range of tips and tricks in the kitchen. From batch cooking to small additions that makes the meal!</p>
+        {/* Icons container */}
+         <div className="hacks-icons">
+            <img src={chiliIcon} alt="chili" />
+            <img src={pepper} alt="pepper" />
+            <img src={peasnap} alt="pea-snap" />
+            <img src={tomatoo} alt="tomatoes on vine" />
+            <img src={brocoli} alt="broccoli" />
+            <img src={onion} alt="onion" />
+        </div>
+        </div>
+
+        {/* Carousel sections container */}
+        <div className="hacks-container">
+        {/* Batch Carousel */}
+        <section className="hacks-section">
+            <h3>Batch Cooking</h3>
+            <h4>Cook it once eat it twice!</h4>
+            <div className="hacks-carousel">
+                <button className="prev" onClick={handleBatchPrev}>
+                    <img src={leftButton} alt="Previous" />
+                </button>
+            <div className="h-carousel">{renderCards(batchHacks, batchIndex)}</div>
+                <button className="next" onClick={handleBatchNext}>
+                    <img src={rightButton} alt="Next" />
+                </button>
             </div>
+        </section>
 
-            {/*batch carousel section*/}
-            <section className="batch-section">
-                <h3>Batch Cooking</h3>
-                <h4>Cook it once eat it twice!</h4>
-                <div className="hacks-carousel">
-                    <button className="prev" onClick={handleBatchPrev}>
-                        <img src={leftButton} alt="Previous"/>
-                    </button>
-                    <div className="h-carousel">{renderCards(batchHacks, batchIndex)}</div>
-                    <button className="next" onClick={handleBatchNext}>
-                        <img src={rightButton} alt="Next"/>
-                    </button>
-                </div>
-            </section>
-
-            {/*freezer carousel section*/}
-            <section className="batch-section">
-                <h3>Freezer Hacks</h3>
-                <h4>Boost your meals with frozen goodies</h4>
-                <div className="hacks-carousel">
-                    <button className="prev" onClick={handleFreezerPrev}>
-                        <img src={leftButton} alt="Previous"/>
-                    </button>
-                    <div className="h-carousel">{renderCards(freezerHacks, freezerIndex)}</div>
-                    <button className="next" onClick={handleFreezerNext}>
-                        <img src={rightButton} alt="Next"/>
-                    </button>
-                </div>
-            </section>
-       </div>
-    );
+       {/* Freezer Carousel */}
+       <section className="hacks-section">
+           <h3>Freezer Hacks</h3>
+           <h4>Boost your meals with frozen goodies</h4>
+            <div className="hacks-carousel">
+                <button className="prev" onClick={handleFreezerPrev}>
+                    <img src={leftButton} alt="Previous" />
+                </button>
+            <div className="h-carousel">{renderCards(freezerHacks, freezerIndex)}</div>
+                <button className="next" onClick={handleFreezerNext}>
+                    <img src={rightButton} alt="Next" />
+                </button>
+            </div>
+        </section>
+     </div>
+  </>
+ );
 };
 
 export default CookingHacks;
