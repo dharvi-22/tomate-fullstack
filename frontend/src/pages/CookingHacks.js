@@ -95,7 +95,7 @@ const CookingHacks =() => {
        {/* Freezer Carousel */}
        <section className="hacks-section">
            <h3>Freezer Hacks</h3>
-           <h4>Boost your meals with frozen goodies</h4>
+           <h4>Boost your meals with frozen goodies...</h4>
             <div className="hacks-carousel">
                 <button className="prev" onClick={handleFreezerPrev}>
                     <img src={leftButton} alt="Previous" />
