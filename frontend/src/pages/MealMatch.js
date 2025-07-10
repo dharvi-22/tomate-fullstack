@@ -12,15 +12,21 @@ const MealMatch = () => {
     const { recipes, fetchRecipes } = useContext(RecipeContext);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showGame, setShowGame] = useState(false);
+
+    const [mealType, setMealType] = useState("");
+    const [dietaryPreference, setDietaryPreference] = useState("");
+
     const navigate = useNavigate();
 
+    //play button only to be active when both filters are selected
+    const filtersSelected = mealType && dietaryPreference;
 
     //function to start the game
     const startGame = () => {
-        fetchRecipes();
+        fetchRecipes("", mealType, dietaryPreference, "");
         setShowGame(true);
         setCurrentIndex(0);
-    }
+    };
 
     //move to the next recipe card
     const nextRecipe = () =>{
@@ -40,8 +46,30 @@ const MealMatch = () => {
     return (
     <div className="match-container">
         <h1>Meal Match</h1>
-        <p>Browse quickly through our recipes catalogue to find the meal that matches your taste buds and mood! Simply swipe left for more or right to view the recipe in more detail.</p>
-        <button className="red-button" onClick={startGame}>Play Meal Match</button>
+        <p>Pick your vibe and find your recipe soulmate..</p>
+
+        {/* dropdown filters */}
+        <div className="filters-container">
+            <select value={mealType} onChange={(e) => setMealType(e.target.value)}>
+                <option value="">Select Meal Type ⌄</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="side dish">Lunch</option>
+                <option value="main course">Dinner</option>
+                <option value="dessert">Dessert</option>
+                <option value="snack">Snack</option>
+            </select>
+
+            <select value={dietaryPreference} onChange={(e) => setDietaryPreference(e.target.value)}>
+                <option value="">Select Dietary Preferences ⌄</option>
+                <option value="pescetarian">Pescatarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten free">Gluten-free</option>
+            </select>
+        </div>
+        
+        {/* play button */}
+        <button className={`play-button ${filtersSelected ? "active" : "disabled"}`} onClick={startGame} disabled={!filtersSelected}>Play Meal Match</button>
 
         {/* condition if te recipes are greater than 0*/}
         {showGame && recipes.length > 0 && (
