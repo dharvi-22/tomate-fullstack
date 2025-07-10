@@ -4,7 +4,7 @@ import RecipeProvider from './context/recipeContext';
 import ScrollTop from "./components/scrollTop";
 
 import Home from "./pages/Home";
-import Form from "./pages/Form";
+import HackForm from "./pages/Form";
 import Explore from "./pages/Explore";
 import RecipePage from "./pages/RecipePage";
 import MealMatch from "./pages/MealMatch";
@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/hack-form" element={<HackForm />} />
             <Route path="/meal-match" element={<MealMatch />} />
             <Route path="/recipe/:id" element={<RecipePage />} />
             <Route path="/cooking-hacks" element={<CookingHacks />} />
