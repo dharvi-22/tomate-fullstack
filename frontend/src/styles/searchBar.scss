@@ -52,12 +52,28 @@
     .clean-btn{
         font-family: Quicksand;
         font-weight: 500;
-    }
+        font-size: 16px;
+        border-radius: 25px;
+        color: white;
+        padding: 0.9rem 2rem;
+        background-color: #BD0300;
+        border:none;
+        cursor: pointer;
+
+        &:hover{
+            background-color:#a70502;;
+        }
     }
 
+
     @media (min-width: 768px){
-       
-        justify-content: center;
+        flex-direction:row;
+        justify-content:center;
+
+        select, .clean-btn{
+            width: 23%;
+        }
     }
+}
 
 }
