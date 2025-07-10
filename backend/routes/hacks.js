@@ -34,4 +34,23 @@ router.get('/', (req, res) => {
   });
 });
 
+//post route to add a new cooking hack
+router.post('/', (req, res) => {
+  const { title, description, tip, category } = req.body;
+
+  if (!title || !description || !category) {
+    return res.status(400).json({error: 'Title, description and category are required'});
+  }
+
+  const query = 'INSERT INTO hacks (title, description, tip, category) VALUES (?,?,?,?)';
+  db.query(query, [title, description, tip || null, category], (err, results) => {
+    if (err) {
+      console.error('Error inserting data:', err.message);
+      return res.status(500).json({ error: 'Failed to add hack'});
+    }
+
+    res.status(201).json({message: 'Hack added successfully', id: results.insertId });
+  });
+});
+
 module.exports = router;

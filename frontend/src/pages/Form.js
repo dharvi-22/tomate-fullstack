@@ -11,81 +11,96 @@ import {ReactComponent as Tomato } from "../assets/tomato.svg";
 
 import "../styles/form.scss";
 
-const RecipeForm =() =>{
 
-    const [recipeName, setRecipeName] = useState("");
+const HackForm = () => {
+    const [title, setTitle] = useState ("");
+    const [description, setDescription] = useState("");
+    const [tip, setTip] = useState("");
     const [category, setCategory] = useState("");
-    const [recipeLink, setRecipeLink] = useState("");
-    const [ingredients, setIngredients] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-
-    // categories
-    const categories = ["Breakfast", "Lunch", "Dinner", "Gluten-free", "Vegan"];
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!recipeName || !category){
-            setError("Please enter a recipe name and pick a category");
-            setSuccess("")
-        } else {
-            setError("");
-            setSuccess("Success! We've got your request and we will review it shortly!");
-            //submission logic 
 
-            //reset form fields after successful submission
-            setRecipeName("");
-            setCategory("");
-            setRecipeLink("");
-            setIngredients("");
+        if(!title || !description || !category) {
+            setError("Please fill in the title, description, and category.");
+            setSuccess("");
+            return;
         }
+
+        try{
+            const response = await fetch("http://localhost:5000/api/hacks", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    title,
+                    description,
+                    tip,
+                    category
+                })
+            });
+
+            if(!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+
+            const data = await response.json();
+
+            setSuccess("Thank you! Your cooking hack has been added.");
+            setError("");
+            setTitle("");
+            setDescription("");
+            setTip("");
+            setCategory("");
+         } catch (err) {
+            console.error(err);
+            setError("Something went wrong. Please try again.");
+            setSuccess("");
+         }
     };
 
     return (
         <div className="form-container">
-            <h2>Request a Recipe</h2>
-            <p>We are actively looking to expand our catalogue! If you have a recipe in mind that you'd like us to adapt, please share it with us. Simply fill out the form below as thoroughly as possible, and we'll do our best to incorporate it into our collection!</p>
+            <h2>Share a Cooking Hack</h2>
+            <p>Help others improve their meal prep game by sharing a cooking tip or hack!</p>
 
-            <form onSubmit={handleSubmit} className="form-group">
-                <input type= "text" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName (e.target.value)}/>
-                
-                {/* category dropdown */}
-                <div className ="form-dropdown">
-                    <select value= {category} 
-                    onChange={(e) => setCategory(e.target.value)} className="custom-dropdown">
-                        <option value="" disabled>Select a Category</option>
-                        {categories.map((cat)=>(
-                            <option key={cat} value={cat}>{cat}</option>
-                        ))}
-                    </select>
-                </div>
+        <form onSubmit={handleSubmit} className="form-group">
+        <input type="text" placeholder="Hack Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
 
-                <p>Share a recipe link or alternatively, fill out at least 5 ingredients.</p>
+        <textarea placeholder="Description" rows="4" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
 
-                <input type="text" placeholder="Recipe Link (Optional)" value={recipeLink} onChange={(e) => setRecipeLink(e.target.value)}/>
-                <textarea placeholder="Ingredients" rows="4" value={ingredients} onChange={(e) => setIngredients(e.target.value)}></textarea>
-                
-                {/* Success Message */}
-                {success && <p className="outcome">{success}</p>}
+        <textarea placeholder="Optional Tip" rows="3" value={tip} onChange={(e) => setTip(e.target.value)}></textarea>
 
-                {/* Error Message */}
-                {error && <p className="outcome">{error}</p>}
-
-                {/* submit button */}
-                <button type="submit" className="red-button">Submit</button>
-            </form>
-            <div className="form-illustrations">
-                <Carrot className="svg-1"/>
-                <Mushroom className="svg-2"/>
-                <Brocoli className="svg-3"/>
-                <Tomato className="svg-4"/>
-                <Beet className="svg-5"/>
-                <Chili className="svg-6"/>
-                <Peasnap className="svg-7"/>
-
-            </div>
+        {/* Category dropdown */}
+        <div className="form-dropdown">
+          <select value={category} onChange={(e) => setCategory(e.target.value)} className="custom-dropdown">
+            <option value="" disabled>Select a Category</option>
+            <option value="batch">Batch</option>
+            <option value="freezer">Freezer</option>
+          </select>
         </div>
+
+        {/* Success & Error */}
+        {success && <p className="outcome">{success}</p>}
+        {error && <p className="outcome">{error}</p>}
+
+        <button type="submit" className="red-button">Submit</button>
+       </form>
+
+      {/* svg illustrations */}
+      <div className="form-illustrations">
+        <Carrot className="svg-1" />
+        <Mushroom className="svg-2" />
+        <Brocoli className="svg-3" />
+        <Tomato className="svg-4" />
+        <Beet className="svg-5" />
+        <Chili className="svg-6" />
+        <Peasnap className="svg-7" />
+      </div>
+    </div>
 
     );
 };
