@@ -46,12 +46,14 @@ const MealMatch = () => {
     return (
     <div className="match-container">
         <h1>Meal Match</h1>
-        <p>Pick your vibe and find your recipe soulmate..</p>
+        <h2>Ready to meet your match?</h2>
+        <p>Browse quickly through our recipes catalogue to find the meal that matches your taste-buds and mood! <br />
+        Simply swipe left for more or right to view the recipe in more detail. Pick your vibe and find your recipe soulmate..</p>
 
         {/* dropdown filters */}
         <div className="filters-container">
             <select value={mealType} onChange={(e) => setMealType(e.target.value)}>
-                <option value="">Select Meal Type ⌄</option>
+                <option value="">Select Meal Type</option>
                 <option value="breakfast">Breakfast</option>
                 <option value="side dish">Lunch</option>
                 <option value="main course">Dinner</option>
@@ -60,7 +62,7 @@ const MealMatch = () => {
             </select>
 
             <select value={dietaryPreference} onChange={(e) => setDietaryPreference(e.target.value)}>
-                <option value="">Select Dietary Preferences ⌄</option>
+                <option value="">Select Diet Type</option>
                 <option value="pescetarian">Pescatarian</option>
                 <option value="vegan">Vegan</option>
                 <option value="vegetarian">Vegetarian</option>
