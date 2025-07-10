@@ -22,8 +22,12 @@ const CookingHacks =() => {
         fetch(`http://localhost:5000/api/hacks`)
          .then(res => res.json())
          .then(data => {
-            setBatchHacks(data.filter(h => h.category === 'batch'));
-            setFreezerHacks(data.filter(h => h.category === 'freezer'));
+            //sort hacks by most recent (highest id)
+            const sortedHacks = data.sort((a,b) => b.id - a.id);
+
+            //filter by category after sorting
+            setBatchHacks(sortedHacks.filter(h => h.category === 'batch'));
+            setFreezerHacks(sortedHacks.filter(h => h.category === 'freezer'));
          });
     }, []);
 
