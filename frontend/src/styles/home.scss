@@ -52,16 +52,14 @@
         margin: 1rem auto;
         justify-content: center;
         border-radius: 25px;
-        color:#BD0300;
-        background-color: none;
+        color:white;
         padding: 0.75rem 1.5rem;
-        border: 2px solid #BD0300;
+        background-color: #BD0300;
         cursor: pointer;
         margin-left: 0;
     
         &:hover{
-            background-color:#BD0300;
-            color:#FEFDFE;
+            background-color:#a70502;;
         }
     }
     

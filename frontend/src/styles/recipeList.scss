@@ -59,21 +59,20 @@
 
 .load-more{
     font-family: Quicksand, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     display: block;
     margin: 1.5rem auto;
     justify-content: center;
     border-radius: 25px;
-    color:#BD0300;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #BD0300;
-    background: none;
+    color: white;
+    padding: 0.9rem 2rem;
+    background-color: #BD0300;
+    border:none;
     cursor: pointer;
 
     &:hover{
-        background-color:#BD0300;
-        color: #FAF2F6;
+        background-color:#a70502;;
     }
 }
 .load-more-container{
@@ -82,4 +81,5 @@
     display: flex;
     justify-content: center;
 }
+
 

@@ -47,7 +47,7 @@ const MealMatch = () => {
     <div className="match-container">
         <h1>Meal Match</h1>
         <h2>Ready to meet your match?</h2>
-        <p>Browse quickly through our recipes catalogue to find the meal that matches your taste-buds and mood! <br />
+        <p>Browse quickly through our recipes catalogue to find the meal that matches your taste-buds and mood! 
         Simply swipe left for more or right to view the recipe in more detail. Pick your vibe and find your recipe soulmate..</p>
 
         {/* dropdown filters */}
