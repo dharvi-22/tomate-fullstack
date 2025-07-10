@@ -67,7 +67,7 @@ const CookingHacks =() => {
         <div className="hacks-header">
             <h1>Cooking Hacks</h1>
             <h2>Cooking made easy...</h2>
-            <p> Swift through our range of tips and tricks in the kitchen. From batch cooking to small additions that makes the meal!</p>
+            <p>Browse our collection of kitchen tips and tricks. From batch cooking to clever touches that elevate every meal!</p>
         {/* Icons container */}
          <div className="hacks-icons">
             <img src={chiliIcon} alt="chili" />
