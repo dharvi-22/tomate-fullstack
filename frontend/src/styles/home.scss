@@ -19,11 +19,12 @@
     padding-bottom: 4rem;
     top:0;
     left:0;
-    transform: translateX(-2%);
+    transform: translateX(0%);
     z-index: -1;
     width: 100vw;
     object-fit: cover;
     height: 100%;
+ 
 }
 
     h1{
@@ -248,6 +249,10 @@
             width: 85px;
         }
     }
+
+    .carousel-container{
+    background-color: #FBF2F7;
+}
 }
 
 @media (min-width: 1024px){
