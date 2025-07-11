@@ -11,6 +11,7 @@ import brocoli from "../assets/brocoli.svg";
 import onion from "../assets/onion.svg";
 import tomatoo from "../assets/tomatooo.svg";
 import mushroom from "../assets/mushroom.svg";
+import svg from "../assets/t-svg.svg";
 
 import "../styles/home.scss";
 
@@ -26,6 +27,12 @@ const Home = () => {
           recipes at your fingertips.
         </h1>
         <p className="hero-p">Find tasty recipes that suite your portion size.</p>
+
+       <div className="hero-icons"> 
+        <img src={brocoli} alt="brocoli" className="brocoli"/>
+        <img src={svg} alt="image-icon" className="img-icon"></img>
+        <img src={pepper} alt="pepper" className="pepper"/>
+      </div>
 
       {/* meal match card*/}
       <div className="hero-cards">
@@ -45,9 +52,6 @@ const Home = () => {
                 <p>Explore through our delicious catalogue based on popular categories.</p>
             </Link>
       </div>
-      </div>
-      <div className="hero-icon"> 
-        <Icon/>
       </div>
     </div>
    
