@@ -56,7 +56,7 @@ const SearchBar = () => {
             <div className="filters-container">
                 {/* meal type dropdown */}
                 <select value={mealType} onChange={handleFilterChange(setMealType)}>
-                    <option value="">Meal Type ⌄</option>
+                    <option value="">Meal Type</option>
                     <option value="breakfast">Breakfast</option>
                     <option value="side dish">Lunch</option>
                     <option value="main course">Dinner</option>
@@ -66,7 +66,7 @@ const SearchBar = () => {
 
                 {/* diet preference dropdown */}
                 <select value={dietaryPreference} onChange={handleFilterChange(setDietaryPreference)}>
-                    <option value="">Dietary Preferences ⌄</option>
+                    <option value="">Dietary Preferences </option>
                     <option value="pescetarian">Pescatarian</option>
                     <option value="vegan">Vegan</option>
                     <option value="vegetarian">Vegetarian</option>
@@ -75,7 +75,7 @@ const SearchBar = () => {
 
                 {/* quick & easy dropdown */}
                 <select value={quickFilter} onChange={handleFilterChange(setQuickFilter)}>
-                    <option value="">Quick and Easy ⌄</option>
+                    <option value="">Quick and Easy </option>
                     <option value="maxReadyTime=20">20min meals</option>
                     <option value="one pot">One pot</option>
                 </select>

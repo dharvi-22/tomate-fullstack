@@ -26,16 +26,16 @@
         .footer-button {
             display: flex;
             align-self: flex-start;
-            background: #FBF2F7;
+            background-color: white;
             color: #454543;
             font-size: 17px;
-            font-weight: 500;
-            padding: 1rem 2rem;
-            border-radius: 15px;
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
             text-decoration: none;
 
             &:hover{
-                font-weight: 600;
+                background-color: #FBF2F7;
                 color:#BD0300;
                 
 

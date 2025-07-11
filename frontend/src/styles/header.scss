@@ -21,7 +21,7 @@
         align-items: center;
 
         .icon{
-            width: 40px;
+            width: 35px;
         }
         //logo hidden in mobile
         .logo{
@@ -31,17 +31,15 @@
     .nav-links{
         list-style: none;
         display: flex;
-        gap: 2rem;
+        gap: 1.4rem;
         font-family: Quicksand, sans-serif;
         font-weight: 600;
         font-size: 14px;
         
-        .silent{
-            display: none;
-        }
         :hover{
             border-bottom: 1.5px solid white;
         }
+    
 
         li{
             white-space: nowrap;
@@ -80,13 +78,24 @@
     
         .silent{
             display:block !important;
-            background: #FEFDFE;
+            background-color: white;
             padding: 0.7rem 1.5rem;
             border-radius: 20px;
             text-decoration: none;
 
+            &:hover{
+                background-color: #FBF2F7;
+                border-bottom: none !important;
+            }
+            
             a{
-                color: #454543 !important;
+                color:#454543 !important;
+
+            &:hover{
+                color:#BD0300 !important;
+            }
+
+                
             }
         }
     }

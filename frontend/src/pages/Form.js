@@ -68,16 +68,16 @@ const HackForm = () => {
             <p>Help others improve their meal prep game by sharing a cooking tip or hack!</p>
 
         <form onSubmit={handleSubmit} className="form-group">
-        <input type="text" placeholder="Hack Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+        <input type="text" placeholder="* Hack Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
 
-        <textarea placeholder="Description" rows="4" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+        <textarea placeholder="* Description" rows="4" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
 
         <textarea placeholder="Optional Tip" rows="3" value={tip} onChange={(e) => setTip(e.target.value)}></textarea>
 
         {/* Category dropdown */}
         <div className="form-dropdown">
           <select value={category} onChange={(e) => setCategory(e.target.value)} className="custom-dropdown">
-            <option value="" disabled>Select a Category</option>
+            <option value="" disabled>* Select a Category</option>
             <option value="batch">Batch</option>
             <option value="freezer">Freezer</option>
           </select>

@@ -3,6 +3,7 @@
 .search-bar{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     padding: 1rem 2rem;
     width: 100%;
@@ -29,6 +30,7 @@
             transform: translateY(-50%);
             padding: 0.9rem 1.2rem;
             border-radius: 30px;
+            border: none;
             background-color:#EC8E8D;
             color:white;
             cursor: pointer
@@ -37,31 +39,36 @@
     .filters-container{
         display: flex;
         flex-direction: column;
-        gap: 0.7rem;
+        gap: 0.8rem;
         width: 100%;
     
         select {
         padding: 1rem;
-        border: 1.5px solid #BD0300;
-        color: #454543;
+        color: white;
         border-radius: 25px;
+        border:none;
         font-size: 16px;
-        background-color: #FAF2F6;
+        font-weight: 500;
+        background-color: #EC8E8D;  
         font-family: Quicksand;
+        cursor: pointer;
     }
-    .clean-btn{
+    .clear-btn{
         font-family: Quicksand;
         font-weight: 500;
         font-size: 16px;
-        border-radius: 25px;
-        color: white;
-        padding: 0.9rem 2rem;
-        background-color: #BD0300;
-        border:none;
+        color: #454543;
         cursor: pointer;
+        border: none;
+        background: none;
+        align-self: center;
+        padding-bottom: 0.5rem;
+        justify-self: flex-end;
+        border-bottom: 1.5px solid #454543;
 
         &:hover{
-            background-color:#a70502;;
+            color:#BD0300;
+            border-bottom: 1.5px solid #BD0300;
         }
     }
 
@@ -70,10 +77,18 @@
         flex-direction:row;
         justify-content:center;
 
-        select, .clean-btn{
+        select{
             width: 23%;
         }
     }
 }
 
+}
+
+@media(min-width: 768px){
+  .search-bar{
+    .search-container{
+        width: 82%;
+    }
+  }
 }
