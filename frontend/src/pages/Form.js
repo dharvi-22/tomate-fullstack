@@ -66,6 +66,7 @@ const HackForm = () => {
         <div className="form-container">
             <h2>Share a Cooking Hack</h2>
             <p>Help others improve their meal prep game by sharing a cooking tip or hack!</p>
+            <p>(note: You can find the hacks you submit on the cooking hacks page)</p>
 
         <form onSubmit={handleSubmit} className="form-group">
         <input type="text" placeholder="* Hack Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
