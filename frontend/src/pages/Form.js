@@ -69,16 +69,16 @@ const HackForm = () => {
             <p>(note: You can find the hacks you submit on the cooking hacks page)</p>
 
         <form onSubmit={handleSubmit} className="form-group">
-        <input type="text" placeholder="* Hack Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+        <input type="text" placeholder="* Hack title" value={title} onChange={(e) => setTitle(e.target.value)}/>
 
         <textarea placeholder="* Description" rows="4" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
 
-        <textarea placeholder="Optional Tip" rows="3" value={tip} onChange={(e) => setTip(e.target.value)}></textarea>
+        <textarea placeholder="Optional tip" rows="3" value={tip} onChange={(e) => setTip(e.target.value)}></textarea>
 
         {/* Category dropdown */}
         <div className="form-dropdown">
           <select value={category} onChange={(e) => setCategory(e.target.value)} className="custom-dropdown">
-            <option value="" disabled>* Select a Category</option>
+            <option value="" disabled>* Select hack category</option>
             <option value="batch">Batch</option>
             <option value="freezer">Freezer</option>
           </select>

@@ -8,6 +8,30 @@ import { Link } from "react-router-dom";
 
 import "../styles/recipePage.scss";
 
+//function to round values to nearest kitchen measurements
+const formatAmount = (value, unit) => {
+    // Round to nearest 0.25 for common kitchen measurements
+    const rounded = Math.round(value * 4) / 4;
+
+    // Map decimals to cooking-friendly fractions
+    const fractionMap = {
+        0.25: "¼",
+        0.33: "⅓",
+        0.5: "½",
+        0.66: "⅔",
+        0.75: "¾",
+    };
+
+    const whole = Math.floor(rounded);
+    const decimal = +(rounded - whole).toFixed(2);
+
+    let fraction = fractionMap[decimal] || "";
+
+    if (whole === 0 && fraction) return `${fraction}`;
+    if (whole > 0 && fraction) return `${whole} ${fraction}`;
+    return `${rounded}`; // fallback if no matching fraction
+};
+
 const RecipePage = () => {
     //extracts id parameter from url
     const {id} =useParams();
@@ -125,7 +149,7 @@ const RecipePage = () => {
                                     <label key={index}>
                                         <input type="checkbox" />
                                         <span>
-                                            {`${(ingredient.amount * ingredientMultiplier).toFixed(2)} ${ingredient.unit} ${ingredient.name}`}
+                                            {`${formatAmount(ingredient.amount * ingredientMultiplier, ingredient.unit)} ${ingredient.unit} ${ingredient.name}`}
                                         </span>
                                     </label>
                                 ))
