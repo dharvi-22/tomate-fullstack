@@ -29,11 +29,12 @@
     }
     .filters-container{
         display: flex;
-        gap: 1rem;
-        justify-items: left;
+        flex-direction: column;
+        gap: 0.6rem;
+        justify-items: center;
         select {
             justify-content: space-between;
-            width: 220px;
+            width: 100%;
             padding: 1rem;
             color: white;
             border-radius: 25px;
@@ -68,14 +69,9 @@
     .meal-container{
         padding: 4rem 0;
 
-
         .swipe-wrapper {
-            touch-action: pan-y;
-        }
-
-    }
-    .swipe-wrapper {
         touch-action: pan-y;
+        }
     }
     .button-group{
         display: flex;
@@ -115,9 +111,9 @@
         align-items: center;
         width: 100%;
         text-align: left;
-        max-width: 480px;
-        min-width: 480px;
-        height: 510px;
+        max-width: 320px;
+        min-width: 320px;
+        height: 500px;
         overflow: hidden;
         margin: 0 auto;
         
@@ -189,9 +185,15 @@
             font-size: 18px;
             max-width: 70%;
         }
+        .meal-card{
+             max-width: 510px;
+             min-width: 510px;
+             height: 500px;
+        }
 
     }
     .filters-container{
+        flex-direction: row !important;
         select{
             font-size: 18px;
         }
@@ -199,7 +201,7 @@
     .play-button{
         font-size: 18px;
         margin: 1rem 0 !important;
-        align-self: flex-start !important;
+        align-self: center !important;
     }
 }
 
