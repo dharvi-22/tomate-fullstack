@@ -13,7 +13,7 @@ const formatAmount = (value, unit) => {
     // Round to nearest 0.25 for common kitchen measurements
     const rounded = Math.round(value * 4) / 4;
 
-    // Map decimals to cooking-friendly fractions
+    // Map decimals to friendly fractions
     const fractionMap = {
         0.25: "¼",
         0.33: "⅓",

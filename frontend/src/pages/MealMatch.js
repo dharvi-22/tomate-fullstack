@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { RecipeContext } from "../context/recipeContext"; 
 import viewButton from "../assets/view-button.svg";
 import leftButton from "../assets/left-button.svg";
- 
+import { useSwipeable } from "react-swipeable"; 
 
 
 const MealMatch = () => {
@@ -42,6 +42,14 @@ const MealMatch = () => {
         }
     };
 
+    //hooks for swipeable function
+    const handlers = useSwipeable({
+        onSwipedLeft: () => nextRecipe(),
+        onSwipedRight: () => viewRecipe(),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true, // allows swipe using mouse too
+    });
+
 
     return (
     <div className="match-container">
@@ -76,15 +84,18 @@ const MealMatch = () => {
         {/* condition if te recipes are greater than 0*/}
         {showGame && recipes.length > 0 && (
             <div className="meal-container">
-                    
-                    <div className="meal-card">
-                        <img src={recipes[currentIndex].image} alt={recipes[currentIndex].title}/>
-                        <div className="meal-info">
-                            <h3>{recipes[currentIndex].title}</h3>
-                            <p>Total Cook Time: 20 minutes</p>
-                            <p>Total Ingredients: 8</p>
+                    {/* swipe function using react swipe library */}
+                    <div {...handlers} className="swipe-wrapper">
+                        <div className="meal-card">
+                            <img src={recipes[currentIndex].image} alt={recipes[currentIndex].title}/>
+                            <div className="meal-info">
+                                <h3>{recipes[currentIndex].title}</h3>
+                                <p>Total Cook Time: 20 minutes</p>
+                                <p>Total Ingredients: 8</p>
+                            </div>
                         </div>
                     </div>
+
                     <div className="button-group">
                         <button className="left-button" onClick={nextRecipe}>
                             <img src={leftButton} alt="left arrow to view next recipe"/>

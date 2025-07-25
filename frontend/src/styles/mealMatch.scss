@@ -67,6 +67,15 @@
     }
     .meal-container{
         padding: 4rem 0;
+
+
+        .swipe-wrapper {
+            touch-action: pan-y;
+        }
+
+    }
+    .swipe-wrapper {
+        touch-action: pan-y;
     }
     .button-group{
         display: flex;
