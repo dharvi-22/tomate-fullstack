@@ -25,6 +25,10 @@
         margin-bottom: 0.5rem;
     }
 
+    .note{
+       font-size: 14px;
+       margin-bottom: 3rem;
+    }
 }
 .form-group {
     width: 100%;
@@ -119,7 +123,10 @@ input, textarea, select{
         }
         p{
             font-size: 18px;
-            max-width: 70%;
+            max-width: 60%;
+        }
+        .note{
+            font-size: 16px;
         }
     }
 
@@ -192,6 +199,9 @@ input, textarea, select{
         p{
             font-size: 22px;
             max-width: 70%;
+        }
+        .note{
+            font-size: 18px;
         }
     }
     .form-illustrations{
