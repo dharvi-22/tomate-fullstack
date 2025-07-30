@@ -52,7 +52,7 @@ const RecipePage = () => {
 
     const API_KEY = process.env.REACT_APP_API_KEY;
 
-    //fetch full recipe infro from spoonacular when component mounts or ID changes
+    //fetch full recipe info from spoonacular when component mounts or ID changes
     useEffect(() => {
         const fetchRecipeDetails = async () => {
             try {

@@ -85,8 +85,8 @@ const HackForm = () => {
         </div>
 
         {/* Success & Error */}
-        {success && <p className="outcome">{success}</p>}
-        {error && <p className="outcome">{error}</p>}
+        {success && <h4 className="outcome">{success}</h4>}
+        {error && <h4 className="outcome">{error}</h4>}
 
         <button type="submit" className="red-button">Submit</button>
        </form>

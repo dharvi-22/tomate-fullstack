@@ -46,7 +46,7 @@ input, textarea, select{
     border-radius: 25px;
     font-family: Quicksand;
     color: #454543;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     outline: none;
 }
@@ -69,14 +69,15 @@ input, textarea, select{
 }
 
 .outcome{
-    color:#BD0300;
+    color:#BD0300 !important;
     margin-bottom: 0 !important;
     margin-top: 10px;
     font-weight: 500;
     font-family: Quicksand;
-    font-size: 20px;
+    font-size: 16px;
     padding: 1rem;
-    border-bottom:3px dotted #BD0300;
+    border:3px dotted #BD0300;
+    border-radius: 1.5rem;
   
 }
 .red-button{
@@ -126,19 +127,22 @@ input, textarea, select{
             max-width: 60%;
         }
         .note{
-            font-size: 16px;
+            font-size: 18px;
         }
+        .outcome{
+        font-size: 16px;
+    }
     }
 
-    input, textarea {
-        font-size: 14px;
+    input, textarea, select {
+        font-size: 16px;
     }
 
     .red-button{
         font-size:14px;
     }
     .custom-dropdown{
-        font-size: 14px;
+        font-size: 16px;
     }
     .outcome{
         font-weight: 500;
@@ -201,8 +205,11 @@ input, textarea, select{
             max-width: 70%;
         }
         .note{
-            font-size: 18px;
+            font-size: 22px;
         }
+    }
+    .outcome{
+        font-size: 18px;
     }
     .form-illustrations{
         svg{

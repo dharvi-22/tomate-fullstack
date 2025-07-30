@@ -42,7 +42,7 @@ const MealMatch = () => {
         }
     };
 
-    //hooks for swipeable function
+    //hooks for swipe-able function
     const handlers = useSwipeable({
         onSwipedLeft: () => nextRecipe(),
         onSwipedRight: () => viewRecipe(),
