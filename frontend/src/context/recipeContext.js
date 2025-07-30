@@ -36,7 +36,8 @@ const RecipeProvider =({children}) => {
         //if a search term is provided, add it to the url
         if (query) url += `&query=${encodeURIComponent(query)}`;
         if (mealType) url += `&type=${encodeURIComponent(mealType)}`;
-        if (dietaryPreference) url += `&diet=${encodeURIComponent(dietaryPreference)}`;
+        //if (dietaryPreference) url += `&diet=${encodeURIComponent(dietaryPreference)}`;
+        if (dietaryPreference && dietaryPreference !== "none") {url += `&diet=${encodeURIComponent(dietaryPreference)}`;}
 
         //if a category is selected, add it as a dietary filter
         if (quickFilter === "maxReadyTime=20") {

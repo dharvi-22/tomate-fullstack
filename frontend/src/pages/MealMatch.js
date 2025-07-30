@@ -47,7 +47,7 @@ const MealMatch = () => {
         onSwipedLeft: () => nextRecipe(),
         onSwipedRight: () => viewRecipe(),
         preventDefaultTouchmoveEvent: true,
-        trackMouse: true, // allows swipe using mouse too
+        trackMouse: true, // 
     });
 
 
@@ -71,6 +71,7 @@ const MealMatch = () => {
 
             <select value={dietaryPreference} onChange={(e) => setDietaryPreference(e.target.value)}>
                 <option value="">Select Diet Type</option>
+                <option value="none">No preference</option>
                 <option value="pescetarian">Pescatarian</option>
                 <option value="vegan">Vegan</option>
                 <option value="vegetarian">Vegetarian</option>

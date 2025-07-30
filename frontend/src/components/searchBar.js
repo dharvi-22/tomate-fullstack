@@ -50,7 +50,7 @@ const SearchBar = () => {
             <div className="search-container">
                 {/* input for searching by recipe name */}
                 <input type="text" placeholder="I am looking for..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={(e) => {if (e.key === 'Enter'){handleSearch();}}}/>
-                <button onClick={handleSearch}>➜</button>
+                <button aria-label="Search recipes" onClick={handleSearch}>➜</button>
             </div>
             {/* filters below search bar */}
             <div className="filters-container">
