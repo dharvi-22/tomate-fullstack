@@ -6,3 +6,5 @@ Developed using React, Context API (Spoonacular), SASS, Node.js, Express and MyS
 
 
 Desktop screencast: https://drive.google.com/file/d/1u_nlGgm5AK7jWy0JEinGsnVmncYY2LQN/view?usp=sharing  
+
+Mobile screencast: https://drive.google.com/file/d/1sAdJ0_V-N7fPeCY_VdulmeacICYpgo5m/view?usp=sharing 
